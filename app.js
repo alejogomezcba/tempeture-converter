@@ -7,25 +7,17 @@ const inputCelsius = document.getElementById('inputCelsius');
 const valueConverted = document.getElementById('valueConverted');
 const submitBtn = document.getElementById('submitBtn');
 
-inputCelsius.addEventListener("input", function () {
-    // Permitir solo números y un punto decimal
-    this.value = this.value.replace(/[^0-9.]/g, "");
-
-    // Evitar múltiples puntos decimales
-    if ((this.value.match(/\./g) || []).length > 1) {
-        this.value = this.value.slice(0, -1);
-    }
-});
-
-if (inputCelsius.value.trim() === "") {
-    valueConverted.textContent = "Ingresa un número válido.";
-    return;
-}
-
-
 document.addEventListener("DOMContentLoaded", function () {
     const checkboxFac = document.querySelector("input[name='fac']");
     const checkboxCaf = document.querySelector("input[name='caf']");
+
+    // Validar que solo se ingresen números y un solo punto decimal
+    inputCelsius.addEventListener("input", function () {
+        this.value = this.value.replace(/[^0-9.]/g, "");
+        if ((this.value.match(/\./g) || []).length > 1) {
+            this.value = this.value.slice(0, -1);
+        }
+    });
 
     checkboxFac.addEventListener("change", function () {
         if (this.checked) {
@@ -42,7 +34,15 @@ document.addEventListener("DOMContentLoaded", function () {
     submitBtn.addEventListener("click", function (event) {
         event.preventDefault(); // Evita que el formulario se recargue
 
-        let inputValue = parseFloat(inputCelsius.value);
+        let inputValue = inputCelsius.value.trim();
+
+        // Validar si el campo está vacío
+        if (inputValue === "") {
+            valueConverted.textContent = "Ingresa un número válido.";
+            return;
+        }
+
+        inputValue = parseFloat(inputValue);
 
         if (isNaN(inputValue)) {
             valueConverted.textContent = "Por favor, ingresa un número válido.";

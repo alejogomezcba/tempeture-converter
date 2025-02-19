@@ -1,0 +1,130 @@
+/* Reset básico y fuente moderna */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    background: #64b9f1;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Estilos del título */
+.form-container h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Input de temperatura */
+.input-celsius {
+    width: 100%;
+    max-width: 90px;
+    height: 50px;
+    border-radius: 6px;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
+    box-shadow: 0px 0px 5px rgba(10, 40, 44, 0.5);
+}
+
+.input-celsius:focus {
+    border-color: #00bcd4;
+    box-shadow: 0px 0px 5px rgba(0, 188, 212, 0.5);
+}
+
+/* Contenedor de opciones */
+.options-container {
+    width: 100%;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo de cada opción */
+.option-element {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+/* Personalizar checkboxes */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #fdc071;
+    cursor: pointer;
+}
+
+/* Botón de calcular */
+#submitBtn {
+    background-color: #034149;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 15px;
+    box-shadow: 0px 0px 5px rgba(10, 40, 44, 0.5);
+}
+
+#submitBtn:hover {
+    background-color: #008ba3;
+}
+
+/* Resultado de la conversión */
+#valueConverted {
+    font-size: 1.3rem;
+    color: #333;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .input-celsius {
+        font-size: 1.3rem;
+        height: 45px;
+    }
+
+    .option-element {
+        font-size: 1rem;
+    }
+
+    #submitBtn {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}

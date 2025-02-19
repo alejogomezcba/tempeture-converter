@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="normalize.css">
+<title>Title</title>
+</head>
+<body>  
+    <form class="form-container">
+        <h1>Convertidor de Temperatura</h1>
+        <input type="text" id="inputCelsius" class="input-celsius">
+        <div class="options-container">
+            <div class="option-element">
+                <input type="checkbox" name="fac" id="fac">
+                <label for="fac">Fahrenheit &#8680; Celsius</label>
+            </div>
+            <div class="option-element">
+                <input type="checkbox" name="caf" id="caf">
+                <label for="caf">Celsius &#8680; Fahrenheit</label>
+            </div>
+            
+        </div>
+        <div class="submit-result">
+            <input type="submit" value="Calcular" id="submitBtn">
+            <p id="valueConverted">0</p>
+        </div>
+    </form>
+    <script src="app.js"></script>
+</body>
+</html>
